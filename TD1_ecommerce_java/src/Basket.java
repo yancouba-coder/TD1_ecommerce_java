@@ -1,3 +1,4 @@
+
 public class Basket {
     private int comProducts[];
     private final int tailPanier;
@@ -17,7 +18,7 @@ public class Basket {
 
         // A améliorer car le mieux c'est d'afficher le nom des produits par leur id !
         // Ceci se fait en ayant un catalog unique accessible partout dans le projet
-        System.out.println("Affiche du panier : ");
+        System.out.println("*****Affiche du panier : ");
 
         System.out.print("[");
         for (int i = 0; i < this.tailPanier; i++) {

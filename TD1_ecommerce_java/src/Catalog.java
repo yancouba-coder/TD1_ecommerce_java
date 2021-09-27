@@ -1,3 +1,4 @@
+
 public class Catalog{
     private Product tabProduits[];
     private  int tabQuantProduit[];
@@ -27,11 +28,15 @@ public class Catalog{
         return id1;
     }
     public Product getProductById(int key){
-        return tabProduits[key];
+    	Product p=tabProduits[key].copie();
+        return p;
     }
-    public int[] getTabQuantProduits(){
-        return this.tabQuantProduit;
+    public void setPrice2(double _price,int key) {
+    	Product p=getProductById(key);
+    	p.setPrice(_price);
+    	
     }
+    
     public int getN(){
         return NBPROD;
     }

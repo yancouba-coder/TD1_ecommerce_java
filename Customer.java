@@ -1,3 +1,4 @@
+
 public class Customer{
     private String name;
     private String prenom;
@@ -14,13 +15,21 @@ public class Customer{
 
     };
     Customer(String _name,String _prenom,String _adresse,String _email,String _tel){
-        this.name=_name;
-        this.prenom=_prenom;
-        this.adresse=_adresse;
-        this.email=_email;
-        this.tel=_tel;
+        if(_email.matches(".+@.+\\.[a-z]+")){
+            this.name=_name;
+            this.prenom=_prenom;
+            this.adresse=_adresse;
+            this.email=_email;
+            this.tel=_tel;
+
+        }
+        else{
+            System.out.println("Adresse éléctronique invalid");
+        }
+        
 
     };
+    
     public String toString(){
         return "[ name : " + this.name +" , Prenom : "+ this.prenom + 
         ", adresse : "+ this.adresse + ", email : "+ this.email + ", tel : "+ this.tel + "]";

@@ -1,0 +1,51 @@
+8.Encapsulation
+Customer  user = new  Customer("Pierre", "Alice",
+                 new  Address(5, "rue du  Commerce",
+                 new  Town("Bordeaux", 33000)));
+System.out.println(user.secondName);
+
+a.) Qu’est-ce qui, dans votre code, permet d’assurer ce comportement ?
+
+Ce qui permettrai d'assurer ce comportement serait de mettre l'attribut secondName de la classe 
+Customer en mode public. De ce fait tout les autres de classe pourront avoir accés à cet attribut.
+
+b.)Quelle  est  la  fa ̧con  correcte  d’obtenir  l’information  (ici,  le  nom  de  famille) ?
+ ́Ecrire  lecode correspondant.
+ 
+ La meilleure façon serait de mettre tout les attribut de classe Customer en mode private
+ et par la suite écrire des getteurs pour permettre aux autres classes de pouvoir lire les attributs.
+  voir la correction dans la classe Customer.
+  
+  
+C.) Quel avantage trouvez-vous `a cette facon ?
+Simplicité d'application
+Possibilité de réutiliser ou de modifier le code en fonction des exigences
+Limite l'accessibilité des données
+d.) déjà fait
+
+9.Encapsulation (suite)Supposons, comme vu precedemment, que la classeCatalogcom-pose 
+les produits et poss`ede une m ́ethodeProduct getProductById(int key)qui retournele produit
+ d’identifiantkey.Supposons que la classeProductposs`ede une m ́ethodevoid setPrice(double price)
+ quimodifie le prix d’un produit.
+ (a)  Ecrire du code montrant qu’il est alors possible qu’un 
+ panier modifie le prix d’un produit.
+ public void setPrice2(double _price,int key) {
+    	Product p=getProductById(key);
+    	p.setPrice(_price);
+    	
+    }
+    dans le main
+     
+    // Modication du prix 
+        System.out.println("Essaie de modification du prix ");
+        cat1.setPrice2(20, 2);
+        cat1.affiche();
+        
+ effectivement il est possible de modifier le prix des produits si nous 
+        
+ (b)  Et donc que faut-il faire pour qu’il soit impossible pour un panier de modifier le nom etle prix d’un objet Product ?
+il faut écrire une fonction copie spécifique à Product qui effectue une copie profonde des objets.
+Sachant qu'en Java les objets passés ou retournés dans les fonctions sont des références aux valeurs
+des champs. Donc il serait plus judicieux d'avaoir une fonction copie.
+
+On va donc implémenter la fonction copie dans Product.
